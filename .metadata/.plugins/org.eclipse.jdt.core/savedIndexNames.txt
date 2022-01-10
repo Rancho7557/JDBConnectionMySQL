@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\Tusha\Desktop\JDBC CONECTOR DRIVE MYSQL\.metadata\.plugins\org.eclipse.jdt.core
+1731445056.index
+1865797976.index
+75931715.index
+92144429.index

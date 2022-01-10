@@ -1,0 +1,100 @@
+package com.team.office;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class TeamDao {
+ 
+	   public static boolean insertTeamTcsToDB(Team tm) {
+	 
+		   boolean f = false;
+		   
+		   try {
+			   //JDBC CODE...!
+			   Connection con = CP.createC();
+			   String q="insert into Team(tcsName,tcsPhoneNo,tcsCity) values(?,?,?)";
+			   
+			   //prepared Statement
+			   PreparedStatement pstmt = con.prepareStatement(q);
+			   
+			   //set the values of parameter
+			   pstmt.setString(1, tm.getTcsName());
+			   pstmt.setString(2, tm.getTcsPhoneNo());
+			   pstmt.setString(3, tm.getTcsCity());
+			   
+			   //execute....!
+			   pstmt.executeUpdate();
+			   f = true;
+			   
+		   } catch (Exception e) {
+			   //TODO: handle exception
+			   e.printStackTrace();
+		   }
+		   return f;
+     }
+
+	public static boolean deleteTeam(int officeId) {
+		
+		// TODO Auto-generated method stub
+
+
+		 
+			   boolean f = false;
+			   
+			   try {
+				   //JDBC CODE...!
+				   Connection con = CP.createC();
+				   String q="delete from Team where tcsId = ?";
+				   
+				   //prepared Statement
+				   PreparedStatement pstmt = con.prepareStatement(q);
+				   
+				   //set the values of parameter
+				   pstmt.setInt(1, officeId);
+				   
+				   
+				   //execute....!
+				   pstmt.executeUpdate();
+				   f = true;
+				   
+			   } catch (Exception e) {
+				   //TODO: handle exception
+				   e.printStackTrace();
+			   }
+			   return f;
+	     }
+
+	public static void showAllTeam() {
+		// TODO Auto-generated method stub
+		
+
+		 
+			   boolean f = false;
+			   
+			   try {
+				   //JDBC CODE...!
+				   Connection con = CP.createC();
+				   String q="select * from Team;";
+				   Statement stmt = con.createStatement();
+				   
+				   ResultSet set = stmt.executeQuery(q);
+				   
+				    
+			while (set.next()) {
+				
+				int id = set.getInt(1);
+				String name=
+			}
+				   
+			   } catch (Exception e) {
+				   //TODO: handle exception
+				   e.printStackTrace();
+			   }
+			   
+	     }
+	}
+
+	
+

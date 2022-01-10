@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Inline local variable &apos;com.team.office.TeamDao.showAllTeam().f&apos; in &apos;com.team.office.TeamDao.showAllTeam()&apos;&#x0D;&#x0A;- Original project: &apos;OfficeTeamApp&apos;&#x0D;&#x0A;- Original element: &apos;com.team.office.TeamDao.showAllTeam().f&apos;" description="Inline local variable &apos;f&apos;" id="org.eclipse.jdt.ui.inline.temp" input="/src&lt;com.team.office{TeamDao.java" selection="1661 9" stamp="1641829279643" version="1.0"/>
+</session>

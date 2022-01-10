@@ -1,0 +1,69 @@
+package com.team.office;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class TeamDao {
+ 
+	   public static boolean insertTeamTcsToDB(Team tm) {
+	 
+		   boolean f = false;
+		   
+		   try {
+			   //JDBC CODE...!
+			   Connection con = CP.createC();
+			   String q="insert into Team(tname,tphone,tcity) values(?,?,?)";
+			   
+			   //prepared Statement
+			   PreparedStatement pstmt = con.prepareStatement(q);
+			   
+			   //set the values of parameter
+			   pstmt.setString(1, tm.getTcsName());
+			   pstmt.setString(2, tm.getTcsPhoneNo());
+			   pstmt.setString(3, tm.getTcsCity());
+			   
+			   //execute....!
+			   pstmt.executeUpdate();
+			   f = true;
+			   
+		   } catch (Exception e) {
+			   //TODO: handle exception
+			   e.printStackTrace();
+		   }
+		   return f;
+     }
+
+	public static boolean deleteTeam(int officeId) {
+		
+		// TODO Auto-generated method stub
+
+
+		 
+			   boolean f = false;
+			   
+			   try {
+				   //JDBC CODE...!
+				   Connection con = CP.createC();
+				   String q="delete from Team where tcsid = ?";
+				   
+				   //prepared Statement
+				   PreparedStatement pstmt = con.prepareStatement(q);
+				   
+				   //set the values of parameter
+				   pstmt.setInt(1, officeId);
+				   
+				   
+				   //execute....!
+				   pstmt.executeUpdate();
+				   f = true;
+				   
+			   } catch (Exception e) {
+				   //TODO: handle exception
+				   e.printStackTrace();
+			   }
+			   return f;
+	     }
+
+	
+}
+
